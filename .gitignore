@@ -1,0 +1,113 @@
+# =====================================================================
+# Face Attendance — repo .gitignore
+# Covers: React Native app (FaceAppDemo), Python fine-tuning pipeline,
+# and the Flask test server (aws-rest).
+# =====================================================================
+
+# ----------------------- Node / React Native ------------------------
+FaceAppDemo/node_modules/
+node_modules/
+FaceAppDemo/npm-debug.log*
+FaceAppDemo/yarn-error.log*
+FaceAppDemo/.metro-health-check*
+FaceAppDemo/metro-cache/
+.expo/
+
+# ----------------------------- Android -------------------------------
+FaceAppDemo/android/.gradle/
+FaceAppDemo/android/build/
+FaceAppDemo/android/app/build/
+FaceAppDemo/android/.idea/
+FaceAppDemo/android/local.properties
+FaceAppDemo/android/captures/
+*.keystore
+!debug.keystore
+*.apk
+*.aab
+
+# ------------------------------- iOS ---------------------------------
+FaceAppDemo/ios/build/
+FaceAppDemo/ios/Pods/
+FaceAppDemo/ios/*.xcworkspace/xcuserdata/
+FaceAppDemo/ios/*.xcodeproj/xcuserdata/
+FaceAppDemo/ios/.xcode.env.local
+*.hmap
+*.ipa
+
+# --------------------- App runtime / debug dumps ---------------------
+# debug frames/crops written when DEBUG_DUMP=true in model.ts
+dbg_*.jpg
+dbg_*.rgb
+dbg_in_frame_*.jpg
+dbg_crop_*.*
+
+# =====================================================================
+# Python fine-tuning pipeline (fine-tuning/)
+# =====================================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Datasets — large and regenerable; do NOT commit
+fine-tuning/raw/
+fine-tuning/raw_train/
+fine-tuning/raw_eval/
+fine-tuning/data_train/
+fine-tuning/data_eval/
+
+# Training outputs — large and regenerable
+fine-tuning/out/*
+fine-tuning/tflite_out/
+fine-tuning/*_inferred.onnx
+
+# ----------------------- Flask test server ---------------------------
+# runtime data the local server writes
+aws-rest/received_attendance.jsonl
+
+# =====================================================================
+# Model artifacts
+#   The APP model stays tracked so the prototype runs out of the box.
+#   Large/loose training model files are ignored. Adjust if you prefer
+#   to keep models out of git and distribute them separately.
+# =====================================================================
+# ignore loose/large model files anywhere...
+*.onnx
+*.pth
+*.pt
+*.tflite
+# ...but KEEP the model the app actually ships:
+!FaceAppDemo/assets/models/w600k_mbf_float16.tflite
+
+# ------------------------------- OS ----------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------- Editors -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ------------------------------- Logs --------------------------------
+*.log
+logs/
+
+# =====================================================================
+# Explicitly TRACKED files (must come last so they override the
+# broad ignores above — in .gitignore the last matching rule wins).
+# =====================================================================
+# Model files to keep in the repo:
+!FaceAppDemo/assets/models/w600k_mbf_float16.tflite
+!fine-tuning/out/w600k_mbf.onnx
+!fine-tuning/out/w600k_mbf_ft_base.onnx
+
+# Installable build(s) for judges — put the APK in a top-level release/ folder
+# (the default build output under android/app/build/ stays ignored):
+!release/
+!release/*.apk
+!release/*.aab

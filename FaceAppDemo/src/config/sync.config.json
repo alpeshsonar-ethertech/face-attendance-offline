@@ -1,0 +1,9 @@
+{
+  "syncEnabled": true,
+  "demoMode": false,
+  "awsEndpoint": "http://10.0.2.2:5000/attendance",
+  "batchSize": 50,
+  "purgeAfterSync": true,
+  "retryIntervalSec": 30,
+  "_notes": "demoMode=true simulates the upload. 10.0.2.2 = emulator's alias for the host PC; use your PC's LAN IP for a physical phone. Never store AWS keys here; production uses a pre-signed URL or short-lived token."
+}
