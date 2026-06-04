@@ -18,11 +18,8 @@ attendance uploads automatically once connectivity returns and is then purged lo
 <!-- INLINE PLAYER: open this README in GitHub's web editor, drag-drop media/demo.mp4 into
      the line below, and GitHub will replace it with a playable user-images URL. -->
 
-https://github.com/USER/REPO/raw/main/media/demo.mp4
 
-_If the player above doesn't load, download/watch the clip directly:_ **[media/demo.mp4](./media/demo.mp4)**
-
-
+https://github.com/user-attachments/assets/1e638975-243c-4d89-ac35-8bf67151d976
 
 ---
 
