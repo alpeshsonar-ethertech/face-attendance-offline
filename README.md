@@ -137,6 +137,14 @@ Point the app at it in `FaceAppDemo/src/config/sync.config.json`
 
 ---
 
+## About
+
+Built by **Alpesh Sonar**, Ethertech Innovations. The offline training/benchmark
+pipeline in this repo builds on our work at [TrainLab.ai](https://trainlab.ai),
+a no-code platform for training and fine-tuning ML models.
+
+---
+
 ## Notes
 
 - Everything that identifies a face runs **offline**; the only network activity is
